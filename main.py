@@ -17,6 +17,10 @@ bubbles: list[BubbleTea] = [
     {"id":4, "name": "Leche manchada", "precio": 5.65, "temperature": "caliente", "active": True}
 ]
 
+@app.get("/")
+def saludo() -> None:
+    return {"message": "Hello WORLD!"}
+
 @app.get("/bubbles")
 def get_bubbles() -> list[BubbleTea]:
     return get_bubbles_filtered()
